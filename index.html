@@ -20,7 +20,10 @@
     <link rel="icon" href="favicon.ico"/>
   </head>
   <body>
+
         <canvas id="GameCanvas" tabindex="99"></canvas>
+
+
     <!-- Polyfills bundle. -->
 
 <script src="./src/polyfills.bundle.js" charset="utf-8"> </script>    
@@ -33,7 +36,18 @@
 <script src="./src/import-map.json" type="systemjs-importmap" charset="utf-8"> </script>
 
 <script>
-    System.import('./index.js').catch(function(err) { console.error(err); })
+ const canvas = document.getElementById('GameCanvas');
+
+function resizeCanvas() {
+    // Set canvas width and height to match the window size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+// Call resizeCanvas to set the initial size
+resizeCanvas();
+
+  System.import('./index.js').catch(function(err) { console.error(err); })
 </script>
   </body>
 </html>

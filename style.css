@@ -28,6 +28,7 @@ input::-webkit-inner-spin-button {
 
 canvas {
   background-color: rgba(0, 0, 0, 0);
+   display: block; /* Remove default inline spacing */
 }
 
 #GameDiv {
